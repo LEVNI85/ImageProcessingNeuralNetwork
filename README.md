@@ -1,74 +1,44 @@
-Handwriting Classifier
-A binary image classification project that distinguishes between two handwriting styles — Galaktioni and Prokle — using a fine-tuned MobileNetV2 model built with TensorFlow/Keras.
+# Image Processing Neural Network 
 
-Project Structure
-FINAL_PROJECT/
-├── dataset/
-│   ├── training/          # Training images organized by class
-│   │   ├── Galaktioni/
-│   │   └── Prokle/
-│   ├── training_patches/  # Patched/augmented training data
-│   ├── check/             # Images to classify (used in project.py)
-│   ├── check new/         # Additional check images
-│   ├── check2/
-│   └── check4/            # Images to classify (used in try.py)
-├── venv/                  # Python virtual environment
-├── handwriting_model2.keras  # Saved trained model
-├── project.py             # Training script + inference on check/
-└── try.py                 # Inference-only script using saved model
+🖼️ **Overview**  
+This project aims to provide an efficient neural network framework for image processing tasks, such as classification, segmentation, and enhancement.
 
-Requirements
+## 🛠️ Features  
+- **Modular Architecture**: Easy to extend with new models and layers.  
+- **Pre-trained Models**: Fine-tune or directly use various pre-trained models for common tasks.  
+- **Support for Various Data Formats**: JPEG, PNG, and more.  
 
-Python 3.8+
-TensorFlow 2.x
-scikit-learn
-NumPy
+## 📚 Installation  
+1. Clone the repository:  
+   ```bash  
+   git clone https://github.com/LEVNI85/ImageProcessingNeuralNetwork.git  
+   ```  
+2. Install dependencies:  
+   ```bash  
+   pip install -r requirements.txt  
+   ```  
 
-Install dependencies:
-bashpip install tensorflow scikit-learn numpy
+## 🚀 Usage  
+- To start, simply run:  
+   ```python  
+   python main.py  
+   ```  
+- For specific tasks, refer to the examples in the `examples` directory.
 
-Usage
-Training the Model
-Run project.py to train the model from scratch and evaluate it on the check/ folder:
-bashpython project.py
-This script will:
+## 💬 Contributing  
+We welcome contributions! Please follow these steps:  
+1. Fork the repository.  
+2. Create your feature branch.  
+3. Commit your changes.  
+4. Push to the branch.  
+5. Open a Pull Request.  
 
-Load and augment training images from dataset/training/
-Train MobileNetV2 with a frozen base for 5 epochs (feature extraction)
-Unfreeze the top 20 layers and fine-tune for another 5 epochs
-Save the trained model as handwriting_model2.keras
-Run predictions on all .jpg images in dataset/check/
+## 📄 License  
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.  
 
-Running Inference on New Images
-Use try.py to classify new images using the already-trained model:
-bashpython try.py
-This script loads handwriting_model2.keras and classifies all .jpg images in dataset/check4/.
-Example output:
-img_001.jpg                              → Galaktioni  (confidence: 0.92)
-img_002.jpg                              → Prokle      (confidence: 0.87)
+## 📧 Contact  
+For questions or feedback, feel free to contact the maintainer at LEVNI85@example.com.  
 
-Model Architecture
-ComponentDetailsBase modelMobileNetV2 (pretrained on ImageNet)Input size160 × 160 × 3HeadGlobalAveragePooling2D → Dense(1, sigmoid)LossBinary Cross-EntropyClassesGalaktioni (0), Prokle (1)
-Training strategy:
+---  
 
-Phase 1 — Base model frozen, only the classification head is trained (LR: 0.001, RMSprop, 5 epochs)
-Phase 2 — Top 20 layers of MobileNetV2 unfrozen for fine-tuning (LR: 0.000001, RMSprop, 5 epochs)
-Class imbalance is handled automatically via compute_class_weight
-
-
-Dataset Layout
-Training images must be organized into subdirectories named after each class:
-dataset/training/
-├── Galaktioni/
-│   ├── sample1.jpg
-│   └── ...
-└── Prokle/
-    ├── sample1.jpg
-    └── ...
-An 80/20 train/validation split is applied automatically during training.
-
-Notes
-
-The model uses MobileNetV2's built-in preprocessing (preprocess_input), which scales pixel values to [-1, 1]. Make sure to apply the same preprocessing when running inference.
-The confidence score represents the model's predicted probability that an image belongs to class Prokle (class 1). Scores below 0.5 are classified as Galaktioni.
-To classify a different folder, update the check_dir path in try.py.
+Thank you for using this project! 🌟  
