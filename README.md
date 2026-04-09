@@ -1,14 +1,14 @@
 # Image Processing Neural Network 
 
-🖼️ **Overview**  
+**Overview**  
 This project aims to provide an efficient neural network framework for image processing tasks, such as classification, segmentation, and enhancement.
 
-## 🛠️ Features  
+## Features  
 - **Modular Architecture**: Easy to extend with new models and layers.  
 - **Pre-trained Models**: Fine-tune or directly use various pre-trained models for common tasks.  
 - **Support for Various Data Formats**: JPEG, PNG, and more.  
 
-## 📚 Installation  
+## Installation  
 1. Clone the repository:  
    ```bash  
    git clone https://github.com/LEVNI85/ImageProcessingNeuralNetwork.git  
@@ -18,26 +18,20 @@ This project aims to provide an efficient neural network framework for image pro
    pip install -r requirements.txt  
    ```  
 
-## 🚀 Usage  
+## Usage  
 - To start, simply run:  
    ```python  
    python main.py  
    ```  
 - For specific tasks, refer to the examples in the `examples` directory.
 
-## 💬 Contributing  
+## Contributing  
 We welcome contributions! Please follow these steps:  
 1. Fork the repository.  
 2. Create your feature branch.  
 3. Commit your changes.  
 4. Push to the branch.  
 5. Open a Pull Request.  
-
-## 📄 License  
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.  
-
-## 📧 Contact  
-For questions or feedback, feel free to contact the maintainer at LEVNI85@example.com.  
 
 ---  
 
